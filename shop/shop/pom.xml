@@ -59,13 +59,20 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- log4jdbc -->
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+
+		<!--임의로 추가해준 부분-->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
+
 
 
 
