@@ -51,6 +51,11 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "fb54f3c5992b96d001bb16e8e92d968d"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -78,6 +83,7 @@
       <workItem from="1667317559035" duration="2298000" />
       <workItem from="1667319905091" duration="77000" />
       <workItem from="1667320005876" duration="2493000" />
+      <workItem from="1667323079646" duration="1315000" />
     </task>
     <servers />
   </component>
