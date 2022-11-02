@@ -17,14 +17,14 @@ import java.time.LocalDateTime;
 public class Item {
 
     @Id
-    @Column(name = "item_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="item_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;       //상품 코드
 
     @Column(nullable = false, length = 50)
     private String itemNm; //상품명
 
-    @Column(name = "price", nullable = false)
+    @Column(name="price", nullable = false)
     private int price; //가격
 
     @Column(nullable = false)
@@ -39,5 +39,9 @@ public class Item {
 
     private LocalDateTime regTime; //등록시간
     private LocalDateTime updateTime; //수정시간
+
+
+
+
 
 }
