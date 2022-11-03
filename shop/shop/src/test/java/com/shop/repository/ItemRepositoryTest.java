@@ -163,7 +163,7 @@ class ItemRepositoryTest {
 
     //상품명과 상품 상세 설명을 or조건을 이용하여 조회하는 쿼리메소드
     @Test
-    @DisplayName("상품명, 상품상세설명 or테스트")
+    @DisplayName("상품명, 상품상세설명 or 테스트")
     public void findByItemNmOrItemDetatilTest() {
         this.createItemList();
         List<Item> itemList =
