@@ -1,5 +1,9 @@
 package com.shop.vo;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class MemberFormVo {
 
     private String name; //이름
