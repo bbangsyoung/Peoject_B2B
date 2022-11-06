@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-222.4167.29">
+  <component name="dataSourceStorageLocal" created-in="IU-222.3345.118">
     <data-source name="shop@localhost" uuid="89b1e640-841e-4e34-a447-7f683798cd20">
       <database-info product="MariaDB" version="10.11.0-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.11.0" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
@@ -8,6 +8,19 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="shop/Hibernate" uuid="584ab536-9f59-4942-bf70-54d4d85f9fde">
+      <database-info product="MariaDB" version="10.11.0-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.11.0" exact-driver-version="3.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
