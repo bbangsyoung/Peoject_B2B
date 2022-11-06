@@ -42,16 +42,27 @@ public class MemberControllerTest {
 
     @Test
     @DisplayName("로그인 성공 테스트")
-    public void loginSuccessTest() throws Exception{
+    public void loginSuccessTest() throws Exception {
         String email = "test@email.com";
-        String password ="1234";
+        String password = "1234";
         this.createMember(email, password);
         mockMvc.perform(formLogin().userParameter("email")
-                .loginProcessingUrl("/members/login") //회원가입 메소드 실행 후 로그인이 되는지 테스트
-                .user(email).password(password))
+                        .loginProcessingUrl("/members/login") //회원가입 메소드 실행 후 로그인이 되는지 테스트
+                        .user(email).password(password))
                 .andExpect(SecurityMockMvcResultMatchers.authenticated()); //로그인 성공시 테스트코드 통과
     }
 
+    @Test
+    @DisplayName("로그인 실패 테스트")
+    public void loginFailTest() throws Exception {
+        String email = "test@email.com";
+        String password = "1234";
+        this.createMember(email, password);
+        mockMvc.perform(formLogin().userParameter("email")
+                        .loginProcessingUrl("/members/login")
+                        .user(email).password("12345"))
+                        .andExpect(SecurityMockMvcResultMatchers.unauthenticated()); //다른비밀번호 로그인 시도
+    }
 
 
 }
