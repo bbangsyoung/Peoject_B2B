@@ -1503,7 +1503,7 @@
       <Position>1</Position>
     </column>
     <column id="546" parent="524" name="item_id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>

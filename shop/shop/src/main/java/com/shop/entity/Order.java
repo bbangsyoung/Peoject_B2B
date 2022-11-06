@@ -30,7 +30,7 @@ public class Order {
 
     //Order 객체가 주인이 아니므로 mappedBy 속성으로 연관관계의 주인을 설정.
     //즉, 연관관계의 주인 필드인 order를 mappedBy 값으로 세팅하면 됨
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) //부모객체의 영속성 상태변화를 자식객체에 모두 전이
     private List<OrderItem> orderItems = new ArrayList<>(); //하나의 주문이 여러개의 주문상품을 가짐(List)
 
     private LocalDateTime regTime;
