@@ -42,7 +42,7 @@ class ItemRepositoryTest {
         QItem qItem = QItem.item;
         JPAQuery<Item> query = queryFactory.selectFrom(qItem)
                 .where(qItem.itemSellStatus.eq(ItemSellStatus.SELL))
-                .where(qItem.itemDetail.like("%"+"테스트 상품 상세 설명" + "%"))
+                .where(qItem.itemDetail.like("%"+"6" + "%"))
                 .orderBy(qItem.price.desc());
 
         List<Item> itemList = query.fetch();
@@ -89,7 +89,7 @@ class ItemRepositoryTest {
         this.createItemList2();
         BooleanBuilder booleanBuiler = new BooleanBuilder();
         QItem item = QItem.item;
-        String itemDetail = "테스트 상품 상세 설명";
+        String itemDetail = "상세 설명2";
         int price = 10003;
         String itemSellStat = "SELL";
 
@@ -125,9 +125,9 @@ class ItemRepositoryTest {
     @DisplayName("상품 저장 테스트")
     public void createItemTest() {
         Item item = new Item();
-        item.setItemNm("test_goods");
+        item.setItemNm("테스트");
         item.setPrice(10000);
-        item.setItemDetail("test_goods_ddd");
+        item.setItemDetail("테스트 상품 상세 설명");
         item.setItemSellStatus(ItemSellStatus.SELL);
         item.setStockNumber(100);
         item.setRegTime(LocalDateTime.now());
@@ -143,7 +143,7 @@ class ItemRepositoryTest {
             Item item = new Item();
             item.setItemNm("테스트" + i);
             item.setPrice(10000 + i);
-            item.setItemDetail("test_dd" + i);
+            item.setItemDetail("테스트 상품 상세 설명" + i);
             item.setItemSellStatus(ItemSellStatus.SELL);
             item.setStockNumber(100);
             item.setRegTime(LocalDateTime.now());
