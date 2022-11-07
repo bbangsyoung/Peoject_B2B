@@ -8,24 +8,25 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
-public class OrderItem {
+public class OrderItem extends BaseEntity {
 
     @Id @GeneratedValue //PK
     @Column(name = "order_item_id")
     private Long id;
 
-    @ManyToOne //N:1
+    @ManyToOne(fetch = FetchType.LAZY) //N:1. 지연로딩.
     @JoinColumn(name ="item_id")
     private Item item;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) //N:1. 지연로딩.
     @JoinColumn(name = "order_id")
     private Order order;
 
     private  int orderPrice; //주문가격
     private int count; //수량
-    private LocalDateTime regTime;
-    private LocalDateTime upDateTime;
+
+//    private LocalDateTime regTime;
+//    private LocalDateTime upDateTime;
 
 
 

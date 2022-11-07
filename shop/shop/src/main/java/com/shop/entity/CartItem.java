@@ -15,11 +15,11 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @ManyToOne //N:1 관계. 다대일 관계로 맵핑
+    @ManyToOne(fetch = FetchType.LAZY) //N:1. 지연로딩.
     @JoinColumn(name="cart_id")
     private Cart cart;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) //N:1. 지연로딩.
     @JoinColumn(name = "item_id")
     private Item item; //상품 맵핑
 
