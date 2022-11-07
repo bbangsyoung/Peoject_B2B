@@ -18,7 +18,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne //일대일 매핑
+    @OneToOne(fetch = FetchType.LAZY) //1:1. 지연로딩
     @JoinColumn(name = "member_id") //매핑할 외래키 지정
     private Member member;
 }
