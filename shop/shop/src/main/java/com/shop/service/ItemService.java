@@ -5,24 +5,17 @@ import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
 import com.shop.repository.ItemRepository;
 import com.shop.vo.ItemFormVo;
-<<<<<<< Updated upstream
-import lombok.RequiredArgsConstructor;
-=======
 import com.shop.vo.ItemImgVo;
 import com.shop.vo.ItemSearchVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
->>>>>>> Stashed changes
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-<<<<<<< Updated upstream
-=======
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
->>>>>>> Stashed changes
 import java.util.List;
 
 @Service
@@ -34,10 +27,6 @@ public class ItemService {
     private final ItemImgService itemImgService;
     private final ItemImgRepository itemImgRepository;
 
-<<<<<<< Updated upstream
-    public Long saveItem(ItemFormVo itemFormVo, List<MultipartFile> itemImgFileList) throws Exception{
-
-=======
 
     //상품조회조건과 페이지 정보를 파라미터로 받아 상품데이터 조회
     @Transactional(readOnly = true)
@@ -49,7 +38,6 @@ public class ItemService {
     public Long saveItem(ItemFormVo itemFormVo, List<MultipartFile> itemImgFileList) throws Exception{
 
 
->>>>>>> Stashed changes
         //상품 등록
         Item item = itemFormVo.createItem();
         itemRepository.save(item);
@@ -70,8 +58,6 @@ public class ItemService {
         return item.getId();
     }
 
-<<<<<<< Updated upstream
-=======
 
 
     //등록된 상품 불러오기
@@ -116,5 +102,4 @@ public class ItemService {
     }
 
 
->>>>>>> Stashed changes
 }

@@ -1,32 +1,13 @@
 package com.shop.controller;
 
-<<<<<<< Updated upstream
-import com.shop.vo.ItemFormVo;
-import lombok.RequiredArgsConstructor;
-=======
 import com.shop.entity.Item;
 import com.shop.vo.ItemFormVo;
 import com.shop.vo.ItemSearchVo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
->>>>>>> Stashed changes
 import org.springframework.stereotype.Controller;
-
-import org.springframework.ui.Model;
-
-import com.shop.service.ItemService;
-
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import javax.validation.Valid;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import java.util.List;
-
-
-
 
 import org.springframework.ui.Model;
 
@@ -52,12 +33,6 @@ public class ItemController {
 
     private final ItemService itemService;
 
-<<<<<<< Updated upstream
-
-    @PostMapping(value = "/admin/item/{itemId}")
-    public String itemUpdate(@Valid ItemFormVo itemFormVo, BindingResult bindingResult,
-                             @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
-=======
     @GetMapping(value = "/admin/item/new")
     public String itemForm(Model model){
         model.addAttribute("itemFormVo", new ItemFormVo());
@@ -68,7 +43,6 @@ public class ItemController {
     public String itemNew(@Valid ItemFormVo itemFormVo, BindingResult bindingResult,
                           Model model, @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList){
 
->>>>>>> Stashed changes
         if(bindingResult.hasErrors()){
             return "item/itemForm";
         }
@@ -81,11 +55,7 @@ public class ItemController {
         try {
             itemService.saveItem(itemFormVo, itemImgFileList);
         } catch (Exception e){
-<<<<<<< Updated upstream
-            model.addAttribute("errorMessage", "상품 수정 중 에러가 발생하였습니다.");
-=======
             model.addAttribute("errorMessage", "상품 등록 중 에러가 발생하였습니다.");
->>>>>>> Stashed changes
             return "item/itemForm";
         }
 
@@ -93,15 +63,8 @@ public class ItemController {
     }
 
 
-<<<<<<< Updated upstream
-    @GetMapping(value="/admin/item/new")
-    public String itemForm(Model model){
-        model.addAttribute("itemFormVo", new ItemFormVo());
-        return "item/itemform";
-=======
     @GetMapping(value = "/admin/item/{itemId}")
     public String itemDtl(@PathVariable("itemId") Long itemId, Model model){
->>>>>>> Stashed changes
 
         try {
             ItemFormVo itemFormVo = itemService.getItemDtl(itemId);
@@ -160,9 +123,4 @@ public class ItemController {
         return "item/itemMng";
     }
 
-<<<<<<< Updated upstream
-
 }
-=======
-}
->>>>>>> Stashed changes

@@ -1,11 +1,5 @@
 package com.shop.service;
 
-<<<<<<< Updated upstream
-import com.shop.entity.ItemImg;
-import com.shop.repository.ItemImgRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
-=======
 import com.shop.entity.Item;
 import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
@@ -15,17 +9,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
->>>>>>> Stashed changes
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
-<<<<<<< Updated upstream
-=======
 import javax.persistence.EntityNotFoundException;
 
->>>>>>> Stashed changes
 
 @Service
 @RequiredArgsConstructor
@@ -62,8 +52,6 @@ public class ItemImgService {
 
     }
 
-<<<<<<< Updated upstream
-=======
     public void updateItemImg(Long itemImgId, MultipartFile itemImgFile) throws Exception{
         if(!itemImgFile.isEmpty()) { //상품이미지를 수정한 경우 상품이미지 업데이트
            ItemImg savedItemImg = itemImgRepository.findById(itemImgId)
@@ -85,7 +73,6 @@ public class ItemImgService {
 
     }
 
->>>>>>> Stashed changes
 
 
 
