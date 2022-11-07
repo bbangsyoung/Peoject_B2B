@@ -1,14 +1,31 @@
 package com.shop.service;
 
+<<<<<<< Updated upstream
 import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+=======
+import com.shop.entity.Item;
+import com.shop.entity.ItemImg;
+import com.shop.repository.ItemImgRepository;
+import com.shop.repository.ItemRepository;
+import com.shop.vo.ItemSearchVo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+>>>>>>> Stashed changes
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
+<<<<<<< Updated upstream
+=======
+import javax.persistence.EntityNotFoundException;
+
+>>>>>>> Stashed changes
 
 @Service
 @RequiredArgsConstructor
@@ -45,6 +62,30 @@ public class ItemImgService {
 
     }
 
+<<<<<<< Updated upstream
+=======
+    public void updateItemImg(Long itemImgId, MultipartFile itemImgFile) throws Exception{
+        if(!itemImgFile.isEmpty()) { //상품이미지를 수정한 경우 상품이미지 업데이트
+           ItemImg savedItemImg = itemImgRepository.findById(itemImgId)
+                   .orElseThrow(EntityNotFoundException::new);
+
+           //기존 이미지 파일 삭제
+            if(!StringUtils.isEmpty(savedItemImg.getImgName())) {
+                fileService.deleteFile(itemImgLocation + "/" + savedItemImg.getImgName());
+            }
+
+            String oriImgName = itemImgFile.getOriginalFilename();
+
+            //업데이트한 상품 이미지 파일 업로드
+            String imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
+            String imgUrl = "/images/item/" + imgName;
+            savedItemImg.updateItemImg(oriImgName, imgName, imgUrl); //변경된 상품이미지 정보 세팅
+
+        }
+
+    }
+
+>>>>>>> Stashed changes
 
 
 

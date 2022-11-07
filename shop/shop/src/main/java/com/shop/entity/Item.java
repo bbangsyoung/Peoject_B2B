@@ -1,6 +1,7 @@
 package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
+import com.shop.vo.ItemFormVo;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,7 +15,16 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity {
+
+    public void updateItem(ItemFormVo itemFormVo) {
+        this.itemNm = itemFormVo.getItemNm();
+        this.price = itemFormVo.getPrice();
+        this.stockNumber = itemFormVo.getStockNumber();
+        this.itemDetail = itemFormVo.getItemDetail();
+        this.itemSellStatus = itemFormVo.getItemSellStatus();
+    }
+
 
     @Id
     @Column(name="item_id")
@@ -39,6 +49,10 @@ public class Item {
 
     private LocalDateTime regTime; //등록시간
     private LocalDateTime updateTime; //수정시간
+
+
+
+
 
 
 
