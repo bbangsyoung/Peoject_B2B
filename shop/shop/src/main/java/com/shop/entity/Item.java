@@ -1,6 +1,7 @@
 package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
+import com.shop.exception.OutOfStockException;
 import com.shop.vo.ItemFormVo;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +17,17 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 public class Item extends BaseEntity {
+
+    //재고처리
+    public void removeStock(int stockNumber) {
+        int restStock = this.stockNumber - stockNumber; //기존재고에서 새로 들어온 재고 빼기
+        if(restStock<0) {
+            //재고가 부족할 경우 예외발생
+            throw  new OutOfStockException("상품 재고가 부족합니다. 현재 재고 수량 : " + this.stockNumber);
+        }
+        this.stockNumber = restStock; //주문 후 남은 재고 수량을 상품의 현재 재고값으로 할당
+    }
+
 
     public void updateItem(ItemFormVo itemFormVo) {
         this.itemNm = itemFormVo.getItemNm();

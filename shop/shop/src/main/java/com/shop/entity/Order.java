@@ -3,6 +3,7 @@ package com.shop.entity;
 import com.shop.constant.OrderStatus;
 import lombok.Getter;
 import lombok.Setter;
+import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,9 +12,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders") //정렬할 때 사용하는 order, 맵핑 테이블 orders
-@Getter
-@Setter
-public class Order {
+@Getter @Setter
+public class Order extends BaseEntity {
 
     @Id @GeneratedValue //PK
     @Column(name = "order_id")
@@ -36,6 +36,37 @@ public class Order {
 
     private LocalDateTime regTime;
     private LocalDateTime updateTime;
+
+
+    //주문정보 추가
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
+    public static Order createOrder(Member member, List<OrderItem> orderItemList) {
+        Order order = new Order();
+        order.setMember(member); //주문고객정보 세팅
+
+        //장바구니에서는 한번에 여러개 상품을 주문가능.
+        //여러개의 주문상품을 담을 수 있도록 리스트형태로 파라미터 값을 받고 orderitem에 객체추가
+        for(OrderItem orderItem : orderItemList){
+            order.addOrderItem(orderItem);
+        }
+        order.setOrderStatus(OrderStatus.ORDER); //주문상태 ORDER
+        order.setOrderDate(LocalDateTime.now()); //주문시간 = 현재시간
+        return order;
+    }
+
+
+    //총 구매금액
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for(OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getTotalPrice();
+            }
+        return totalPrice; //총금액 반영
+    }
 
 
 
