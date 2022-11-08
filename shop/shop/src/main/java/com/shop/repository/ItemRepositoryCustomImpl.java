@@ -8,14 +8,10 @@ import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
 import com.shop.entity.QItem;
 
-<<<<<<< Updated upstream
-import com.shop.vo.ItemSearchVo;
-=======
 import com.shop.entity.QItemImg;
 import com.shop.vo.ItemSearchVo;
 import com.shop.vo.MainItemVo;
 import com.shop.vo.QMainItemVo;
->>>>>>> Stashed changes
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -37,13 +33,10 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
         return searchSellStatus == null ? null : QItem.item.itemSellStatus.eq(searchSellStatus);
     }
 
-<<<<<<< Updated upstream
-=======
     private BooleanExpression itemNmLike(String searchQuery){
         return StringUtils.isEmpty(searchQuery) ? null : QItem.item.itemNm.like("%" + searchQuery + "%");
     }
 
->>>>>>> Stashed changes
     private BooleanExpression regDtsAfter(String searchDateType){
 
         LocalDateTime dateTime = LocalDateTime.now();
@@ -97,8 +90,6 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
 
         return new PageImpl<>(content, pageable, total);
     }
-<<<<<<< Updated upstream
-=======
 
     @Override
     public Page<MainItemVo> getMainItemPage(ItemSearchVo itemSearchVo, Pageable pageable) {
@@ -134,5 +125,4 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
 
         return new PageImpl<>(content, pageable, total);
     }
->>>>>>> Stashed changes
 }

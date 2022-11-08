@@ -7,10 +7,7 @@ import com.shop.repository.ItemRepository;
 import com.shop.vo.ItemFormVo;
 import com.shop.vo.ItemImgVo;
 import com.shop.vo.ItemSearchVo;
-<<<<<<< Updated upstream
-=======
 import com.shop.vo.MainItemVo;
->>>>>>> Stashed changes
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,14 +35,11 @@ public class ItemService {
         return itemRepository.getAdminItemPage(itemSearchVo, pageable);
     }
 
-<<<<<<< Updated upstream
-=======
     @Transactional(readOnly = true)
     public Page<MainItemVo> getMainItemPage(ItemSearchVo itemSearchVo, Pageable pageable){
         return itemRepository.getMainItemPage(itemSearchVo, pageable);
     }
 
->>>>>>> Stashed changes
 
     public Long saveItem(ItemFormVo itemFormVo, List<MultipartFile> itemImgFileList) throws Exception{
 
