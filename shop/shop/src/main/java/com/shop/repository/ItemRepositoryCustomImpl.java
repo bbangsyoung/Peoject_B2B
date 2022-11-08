@@ -8,7 +8,14 @@ import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
 import com.shop.entity.QItem;
 
+<<<<<<< Updated upstream
 import com.shop.vo.ItemSearchVo;
+=======
+import com.shop.entity.QItemImg;
+import com.shop.vo.ItemSearchVo;
+import com.shop.vo.MainItemVo;
+import com.shop.vo.QMainItemVo;
+>>>>>>> Stashed changes
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -30,6 +37,13 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
         return searchSellStatus == null ? null : QItem.item.itemSellStatus.eq(searchSellStatus);
     }
 
+<<<<<<< Updated upstream
+=======
+    private BooleanExpression itemNmLike(String searchQuery){
+        return StringUtils.isEmpty(searchQuery) ? null : QItem.item.itemNm.like("%" + searchQuery + "%");
+    }
+
+>>>>>>> Stashed changes
     private BooleanExpression regDtsAfter(String searchDateType){
 
         LocalDateTime dateTime = LocalDateTime.now();
@@ -83,4 +97,42 @@ public class ItemRepositoryCustomImpl implements ItemRepositoryCustom{
 
         return new PageImpl<>(content, pageable, total);
     }
+<<<<<<< Updated upstream
+=======
+
+    @Override
+    public Page<MainItemVo> getMainItemPage(ItemSearchVo itemSearchVo, Pageable pageable) {
+        QItem item = QItem.item;
+        QItemImg itemImg = QItemImg.itemImg;
+
+        List<MainItemVo> content = queryFactory
+                .select(
+                        new QMainItemVo(
+                                item.id,
+                                item.itemNm,
+                                item.itemDetail,
+                                itemImg.imgUrl,
+                                item.price)
+                )
+                .from(itemImg)
+                .join(itemImg.item, item)
+                .where(itemImg.repimgYn.eq("Y"))
+                .where(itemNmLike(itemSearchVo.getSearchQuery()))
+                .orderBy(item.id.desc())
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetch();
+
+        long total = queryFactory
+                .select(Wildcard.count)
+                .from(itemImg)
+                .join(itemImg.item, item)
+                .where(itemImg.repimgYn.eq("Y"))
+                .where(itemNmLike(itemSearchVo.getSearchQuery()))
+                .fetchOne()
+                ;
+
+        return new PageImpl<>(content, pageable, total);
+    }
+>>>>>>> Stashed changes
 }

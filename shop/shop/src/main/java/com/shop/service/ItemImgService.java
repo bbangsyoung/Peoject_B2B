@@ -39,7 +39,7 @@ public class ItemImgService {
             imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
             //이미지 등록 시 uploadFile 메소드 호출 -> 저장된 파일에 이름을 imgName변수에 저장
 
-            imgUrl = "/imges/item/" + imgName; //저장한 상품 이미지를 불러올 경로를 설정
+            imgUrl = "/images/item/" + imgName; //저장한 상품 이미지를 불러올 경로를 설정
             //C:/00shop/ 아래 item 폴더에 이미지를 저장하므로 상품이미지를 불러오는 경로로 /images/item/ 를 붙여줌
         }
 

@@ -106,7 +106,11 @@ public class ItemController {
     public String itemDtl(Model model, @PathVariable("itemId") Long itemId){
         ItemFormVo itemFormVo = itemService.getItemDtl(itemId);
         model.addAttribute("item", itemFormVo);
+<<<<<<< Updated upstream
         return "item/itemDtl";
+=======
+        return "item/itemdtl";
+>>>>>>> Stashed changes
     }
 
     @GetMapping(value = {"/admin/items", "/admin/items/{page}"})
@@ -122,5 +126,10 @@ public class ItemController {
 
         return "item/itemMng";
     }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
 }
