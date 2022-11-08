@@ -63,6 +63,11 @@ public class Item extends BaseEntity {
     private LocalDateTime updateTime; //수정시간
 
 
+    //상품재고 추가
+    public void addStock(int stockNumber) {
+        this.stockNumber += stockNumber;
+    }
+
 
 
 

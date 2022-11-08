@@ -106,7 +106,7 @@ public class ItemController {
     public String itemDtl(Model model, @PathVariable("itemId") Long itemId){
         ItemFormVo itemFormVo = itemService.getItemDtl(itemId);
         model.addAttribute("item", itemFormVo);
-        return "item/itemdtl";
+        return "item/itemDtl";
     }
 
     @GetMapping(value = {"/admin/items", "/admin/items/{page}"})
