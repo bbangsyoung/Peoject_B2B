@@ -13,7 +13,7 @@ public class ItemImgVo {
     private String imgName;
     private String oriImgName;
 
-    private String imgUrl;
+    private String imgUrl; //이미지 주소
     private String repImgYn;
 
     private static ModelMapper modelMapper = new ModelMapper(); //멤버변수로 객체추가
