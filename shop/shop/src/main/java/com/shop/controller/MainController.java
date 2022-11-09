@@ -22,7 +22,7 @@ public class MainController {
     @GetMapping(value = "/")
     public String main(ItemSearchVo itemSearchVo, Optional<Integer> page, Model model){
 
-        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 20);
         Page<MainItemVo> items = itemService.getMainItemPage(itemSearchVo, pageable);
 
         model.addAttribute("items", items);
