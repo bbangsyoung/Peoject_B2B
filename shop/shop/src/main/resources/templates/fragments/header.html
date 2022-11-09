@@ -3,41 +3,82 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <div th:fragment="header">
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="/">Shop</a>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
-                    <a class="nav-link" href="/admin/item/new">상품 등록</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
-                    <a class="nav-link" href="/admin/items">상품 관리</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/cart">장바구니</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/orders">구매이력</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" href="/members/login">로그인</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/members/logout">로그아웃</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get">
-                <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+    <!-- 내가 넣는거 -->
+    <div class="clearTest"></div>
+    <div id="h_top">
+        <div class="logo"><a href="/"><img src="/css/images/logo.jpg" alt="#"></a></div>
+        <div class="topCenter">
+            <p><img src="/css/images/notice.jpg" width="45" height="18"><em>[필독] 온라인가 미준수 업체목록 3회 적발 시 공급사 중단 및 손해배상 청구예정</em></p>
+
+            <div class="searchbar">
+                <form th:action="@{/}" method="get">
+                    <input name="searchQuery" class="search-txt" type="search" placeholder="검색어를 입력해 주세요" aria-label="Search">
+                    <button class="search-btn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
         </div>
-    </nav>
-</div>
+        <div class="userMenu">
+            <ul>
+                <li sec:authorize="isAuthenticated()"><a href="/orders"><img src="/css/images/menu04.png" alt="구매내역"></a></li>
+                <li sec:authorize="isAuthenticated()"><a href="/cart"><img src="/css/images/menu03.png" alt="장바구니"></a></li>
+                <li sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><a href="/admin/items"><img src="/css/images/menu02.png" alt="상품관리"></a></li>
+                <li sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><a href="/admin/item/new"><img src="/css/images/menu01.png" alt="상품등록"></a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div id="h_bottom">
+        <div id="Allcate"><a href="#">전체 카테고리</a></div>
+
+        <nav>
+            <ul>
+                <li><a href="#"><img src="/css/images/newIcon.jpg" alt=""> BEST</a></li>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">입고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">온라인가 미준수신고</a></li>
+            </ul>
+
+        </nav>
+        <div class="logMenu">
+            <ul>
+                <li sec:authorize="isAnonymous()">
+                    <a href="/members/login">로그인</a>
+                </li>
+
+                <li sec:authorize="isAuthenticated()">
+                    <a href="/members/logout">로그아웃</a>
+                </li>
+
+                <li>
+                    <a href="#">마이페이지</a>
+                </li>
+                <li sec:authorize="isAnonymous()">
+                    <a href="/members/new">회원가입</a>
+                </li>
+
+
+                <!--                <li><a href="#">로그인</a></li>-->
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<div class="clearTest"></div>
+</div><!-- 헤더끝 -->
 
 </html>

@@ -1,0 +1,70 @@
+header{ width: 1200px; height: 200px; margin: 0 auto;}
+.clearTest{clear: both;}
+
+
+#h_top{height: 200px; width: 1200px;  margin: 0 auto;}
+.logo{float: left; padding-top: 80px; padding-left: 10px;}
+
+.topCenter{float: left; margin-top: 60px; margin-left: 150px; width: 530px; height: 100px;}
+.topCenter>p{height: 18px; margin-bottom: 10px; margin-left: 25px;}
+.topCenter>p>img{margin-bottom: 10px; float: left;}
+.topCenter>p>em{font-size: 13px; line-height: 20px; display: block; float: left; margin-left: 10px;}
+.searchbar{
+    background-color: #FFF;
+    height: 55px;
+    padding: 10px;
+    color: #EDEDED;
+    border-radius: 40px;
+    border: 4px solid #6c347d;
+}
+.search-btn {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #fff;
+  }
+  .fas{color: #6c347d; background-color: #fff;}
+  .search-txt {
+    float: left;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    line-height: 30px;
+    margin-left: 10px;
+  }
+
+
+
+
+.userMenu{float: right; margin-top: 140px; width: 220px; height: 50px;}
+.userMenu>ul{display: block;}
+.userMenu>ul>li{display: block; float: right;}
+.userMenu>ul>li>a{margin: 0 3px;}
+
+
+
+#h_bottom{height: 55px;  width: 1200px; margin: 0 auto;}
+#Allcate{float: left; background-color: #5a4876; width: 225px; height: 55px; text-align: center; line-height: 55px;}
+#Allcate>a{color: #fff; font-weight: 600;}
+nav{float: left;  height: 55px; width:630px;}
+nav>ul{height: 53px; width:630px; float: left;  display: block;}
+nav>ul>li:first-child{padding-left:20px;}
+nav>ul>li{display: block; float: left; height: 55px;  padding: 0 10px;line-height: 55px;}
+nav>ul>li>a{height: 55px;  display: block; padding: 0 10px;}
+
+.logMenu{float: right; height: 55px; width: 270px; }
+.logMenu>ul{display: block; float: right;}
+.logMenu>ul>li{display: block; float: left; text-align: center;}
+.logMenu>ul>li>a{font-size: 15px; display: block; margin: 0 14px; line-height: 55px;}
+
+
+
+
+
+
+
