@@ -101,6 +101,30 @@ public class OrderService {
     }
 
 
+    public Long orders(List<OrderVo> orderVoList, String email){
+
+        Member member = memberRepository.findByEmail(email);
+        List<OrderItem> orderItemList = new ArrayList<>();
+
+        for (OrderVo orderVo : orderVoList) {
+            Item item = itemRepository.findById(orderVo.getItemId())
+                    .orElseThrow(EntityNotFoundException::new);
+
+            OrderItem orderItem = OrderItem.createOrderItem(item, orderVo.getCount());
+            orderItemList.add(orderItem);
+        }
+
+        Order order = Order.createOrder(member, orderItemList);
+        orderRepository.save(order);
+
+        return order.getId();
+    }
+
+
+
+
+
+
 
 
 
