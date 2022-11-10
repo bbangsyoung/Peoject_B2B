@@ -114,78 +114,52 @@
   </script>
 </th:block>
 
-<th:block layout:fragment="css">
-  <style>
-    .mgb-15{
-      margin-bottom:15px;
-    }
-    .mgt-30{
-      margin-top:30px;
-    }
-    .mgt-50{
-      margin-top:50px;
-    }
-    .repImgDiv{
-      margin-right:15px;
-      height:auto;
-      width:50%;
-    }
-    .repImg{
-      width:100%;
-      height:400px;
-    }
-    .wd50{
-      height:auto;
-      width:50%;
-    }
-  </style>
-</th:block>
 
-<div layout:fragment="content" style="margin-left:25%;margin-right:25%">
-
+<div layout:fragment="content" class="detailContent">
+  <div class="goodsTop">
   <input type="hidden" id="itemId" th:value="${item.id}">
-
-  <div class="d-flex">
-    <div class="repImgDiv">
-      <img th:src="${item.itemImgVoList[0].imgUrl}" class = "rounded repImg" th:alt="${item.itemNm}">
+    <div class="goodsImg">
+      <div class="img">
+        <img th:src="${item.itemImgVoList[0].imgUrl}" th:alt="${item.itemNm}">
+      </div>
     </div>
-    <div class="wd50">
-            <span th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="badge badge-primary mgb-15">
+
+  <div class="goodText">
+    <div class="goodText_top">
+      <span th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}">
                 판매중
-            </span>
-      <span th:unless="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="badge btn-danger mgb-15" >
+      </span>
+      <span th:unless="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}">
                 품절
-            </span>
-      <div class="h4" th:text="${item.itemNm}"></div>
-      <hr class="my-4">
-
-      <div class="text-right">
-        <div class="h4 text-danger text-left">
-          <input type="hidden" th:value="${item.price}" id="price" name="price">
-          <span th:text="${item.price}"></span>원
-        </div>
-        <div class="input-group w-50">
-          <div class="input-group-prepend">
-            <span class="input-group-text">수량</span>
-          </div>
-          <input type="number" name="count" id="count" class="form-control" value="1" min="1">
-        </div>
-      </div>
-      <hr class="my-4">
-
-      <div class="text-right mgt-50">
-        <h5>결제 금액</h5>
-        <h3 name="totalPrice" id="totalPrice" class="font-weight-bold"></h3>
-      </div>
-      <div th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="text-right">
-        <button type="button" onclick="addCart()">장바구니 담기 </button>
-        <button type="button" onclick="order()">주문하기 </button>
-      </div>
+      </span>
+      <p>전체채널 판매가능</p>
+      <p class="goodsTitle" th:text="${item.itemNm}"></p>
+      <p>상품코드 G000055643</p>
+      <p>원산지 중국</p>
+      <hr>
+      <input type="hidden" th:value="${item.price}" id="price" name="price">
+      <p th:text="${item.price}"></p><p>원</p>
+      <span class="input-group-text">수량</span>
+      <input type="number" name="count" id="count" class="form-control" value="1" min="1">
+      <h5>결제 금액</h5>
+      <h3 name="totalPrice" id="totalPrice"></h3>
+    </div>
+    <div class="goodText_btn"  th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" >
+      <button type="button" onclick="addCart()" class="goodBth1">장바구니</button>
+      <button type="button" onclick="order()" class="goodBth2">주문하기</button>
+    </div>
       <div th:unless="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="text-right">
-        <button type="button" class="btn btn-danger btn-lg">품절</button>
+        <button type="button" class="goodBth1">품절</button>
       </div>
+
+
+
+    <div class="detalBox">
+      <em>구매 시 참고사항</em>
+      공장 제조공정상 뒷면에 작은 흠집이 있을 수 있으며 불량이 아니며, 해당 사유로 인한 반품/교환은 불가합니다.
     </div>
   </div>
+  </div><!--top end -->
 
 
 
@@ -196,18 +170,38 @@
 
 
 
-  <div class="jumbotron jumbotron-fluid mgt-30">
-    <div class="container">
-      <h4 class="display-5">상품 상세 설명</h4>
-      <hr class="my-4">
-      <p class="lead" th:text="${item.itemDetail}"></p>
+  <!-- 하단 상세이미지부분 -->
+  <div class="goodsBottom">
+    <p>상품 상세설명</p>
+    <p class="notice"  th:text="${item.itemDetail}"></p>
+    <hr>
+    <div class="detailImg" th:each="itemImg : ${item.itemImgVoList}">
+      <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" width="800">
     </div>
+  </div><!-- 하단 상세이미지부분 끝 -->
+
+  <!-- 하단 제품세부정보 -->
+  <div class="bottomInfo">
+    <em>교환/반품 정보</em>
+    <p>- 판매자 부주의로 생긴 교환반품의 경우 무상으로 교환반품이 가능합니다. (오배송/미배송/파손/불량의 경우 - 수량 후 24시간 이내)<br>
+      - 고객 변심에 의한 교환/반품의 경우 왕복배송비를 지불해 주셔야 하며, 상품가치가 떨어지지않은 상태에서만 가능합니다.(수령 후 7일 이내)<br>
+      - 반드시 교환이나 반품 전 고객센터에 접수하여야 처리가 원활히 될 수 있습니다.<br>
+      - 다음과 같은 경우에는 교환 및 반품이 불가합니다.<br>
+      ① 이용자에게 책임있는 사유로 상품이 멸실 또는 훼손된 경우<br>
+      ② 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실한 경우<br>
+      ③ 이용자의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우</p>
   </div>
 
-  <div th:each="itemImg : ${item.itemImgVoList}" class="text-center">
-    <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" class="rounded mgb-15" width="850">
-  </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+</div><!-- content end -->
 
 </html>

@@ -63,6 +63,8 @@
             <li class="page-item" th:classappend="${items.number eq 0}?'disabled':''">
                 <a th:href="@{'/' + '?searchQuery=' + ${itemSearchVo.searchQuery} + '&page=' + ${items.number - 1} }" aria-label='Previous' class="page-link">
                     <span aria-hidden='true'>Previous</span>
+                    <!--<p>스타트 체크 [[${start}]]</p>
+                    <p>엔드 체크 [[${end}]]</p>-->
                 </a>
             </li>
 

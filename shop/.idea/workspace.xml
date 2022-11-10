@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88ae1adf-8e06-4b5d-9648-b0bf5cbd9fbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/shop/src/main/java/com/shop/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/src/test/java/com/shop/Entity/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89b1e640-841e-4e34-a447-7f683798cd20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89b1e640-841e-4e34-a447-7f683798cd20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/com/shop/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/com/shop/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/main/resources/static/css/top.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/resources/static/css/top.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/resources/templates/fragments/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Peoject_B2B/shop/shop/src/main/resources/templates/thymeleafEx&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/00_project/Peoject_B2B/shop&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -123,7 +122,7 @@
       <recent name="com.shop.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderTest.cascadeTest">
+  <component name="RunManager" selected="Spring Boot.ShopApplication">
     <configuration name="CartTest.findCartAndMemberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shop" />
       <extension name="coverage">
@@ -251,6 +250,8 @@
       <workItem from="1667742069565" duration="7240000" />
       <workItem from="1667749885224" duration="523000" />
       <workItem from="1667750439749" duration="2362000" />
+      <workItem from="1668002999292" duration="2789000" />
+      <workItem from="1668005891916" duration="121000" />
     </task>
     <servers />
   </component>
