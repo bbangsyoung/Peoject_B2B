@@ -18,7 +18,6 @@
 .itemPrice{font-size: 20px; font-weight: 700;  display: block; width: 200px; height: 30px; margin: 10px auto 5px auto; text-align: right;}
 
 
-
 /* 상품상세페이지 */
 .detailContent{width: 1200px; margin: 0 auto 120px auto;}
 
@@ -30,7 +29,7 @@
 .goodText{width: 580px; height: 500px; margin-right: 50px; margin-top: 70px; float: right;}
 
 .goodText_top{width: 500px; margin: 40px auto auto auto;}
-.goodText_top>span{color:green;}
+.goodText_top>span{color:#7853ab;}
 .goodText_top>p:nth-of-type(1){font-size: 12px; line-height: 30px; margin-bottom: 6px; text-align: center; color: #fff; width: 100px; height: 30px; background-color: black; display: block;}
 .goodText_top>p:nth-of-type(2){font-size: 22px; font-weight: 700; margin-bottom: 15px;}
 .goodText_top>p:nth-of-type(3){font-size: 14px;}
@@ -47,12 +46,62 @@
 
 
 /* 하단 상세이미지 */
-.goodsBottom{ clear: both; width: 1000px; border: 1px solid red; margin:  0 auto;}
+.goodsBottom{ clear: both; width: 1000px; margin:  0 auto;}
 .goodsBottom>.notice{}
 .detailImg{width: 1000px; text-align: center;}
 .detailImg>img{max-width: 1000px;}
+
 
 /* 하단제품세부정보 */
 .bottomInfo{padding: 50px; border: 1px solid #ccc; width: 900px; height: 330px; margin: 30px auto;}
 .bottomInfo>em{font-weight: 800; margin-bottom: 10px; display: block;}
 .bottomInfo>p{font-size: 15px; line-height: 25px;}
+
+
+/* 로그인/회원가입폼 */
+.loginPage{width: 500px !important;; margin: 0 auto 50px auto;}
+.loginPageTitle{width: 500px; line-height: 80px; height: 30px; margin: 30px auto; text-align: center; font-size: 25px; font-weight: 700;}
+.logBtn{text-align: center;}
+.btn{background-color: #6c347d !important; border: none !important;}
+.btn:hover{background-color: #8f45a6 !important;}
+
+
+/*아이템 관련 페이지들*/
+.itemPage{width: 800px !important;; margin: 0 auto 80px auto;}
+.itemPageTitle{width: 500px; line-height: 80px; height: 30px; margin: 30px auto 50px auto; text-align: center; font-size: 25px; font-weight: 700;}
+.DWon{display: inline-block}
+
+/* 페이징 */
+.hellPaging{margin: 50px auto; width: 800px;}
+.page-link{border: 1px solid #ced4da !important; height: 40px !important;}
+/*
+.page-link:active{background-color: #8f45a6 !important;}*/
+
+.th{text-align: center !important;}
+.td{text-align: center !important; color: #5a5a6f !important; font-size: 14px;}
+
+.td2{width: 300px; font-size: 14px;}
+
+.hisOrdersContent{margin: 30px auto; width: 700px; }
+.hisOrdersContent>div{float: left;}
+.f_left{float: left;}
+.f_right{float: left;}
+.align-self-center{width: 600px !important; margin-left: 20px !important;}
+.inputBox{width: 50px !important; text-align: center;}
+
+.hisImgC{margin-left: 20px;}
+.hisWon{width: 150px; float: right; }
+.hisWon>span:nth-child(1){margin-right: 30px;}
+
+.hisBtn2{width: 100px; float: right}
+.hisBtn button{border: none; font-size: 15px; background-color: #3f3f3f; color: #fff; float: right}
+.his1{padding-top: 50px;}
+
+.itemWon{font-size: 25px; font-weight: 700; width: 450px; text-align: right;}
+.Dcount{margin-right: 30px; height: 30px; width: 450px; float: right; margin-bottom: 10px; clear: both;}
+.Dcount span{float: right}
+.Dcount input{width: 60px; text-align: center}
+.Dcount2{margin-right: 30px; height: 30px; width: 450px;float: right; margin-bottom: 50px; }
+.Dcount2 p{display: inline-block;  float: right;}
+.Dcount2 p:nth-of-type(1){font-weight: 700; font-size: 15px;}
+.Dcount2 p:nth-of-type(2){margin-right: 15px;}

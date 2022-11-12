@@ -43,7 +43,7 @@ public class Member extends BaseEntity{
         //시큐리티 설정클래스에 등록한 빈을 파라미터르 넘겨 비밀번호를 암호화
         String password = passwordEncoder.encode(memberFormVo.getPassword());
         member.setPassword(password);
-        member.setRole(Role.USER);
+        member.setRole(Role.ADMIN);
         return member;
     }
 }

@@ -136,15 +136,28 @@
       <p class="goodsTitle" th:text="${item.itemNm}"></p>
       <p>상품코드 G000055643</p>
       <p>원산지 중국</p>
-      <hr>
+
       <input type="hidden" th:value="${item.price}" id="price" name="price">
-      <p th:text="${item.price}"></p><p>원</p>
-      <span class="input-group-text">수량</span>
-      <input type="number" name="count" id="count" class="form-control" value="1" min="1">
-      <h5>결제 금액</h5>
-      <h3 name="totalPrice" id="totalPrice"></h3>
+      <div class="f_right">
+        <p th:text="${item.price}" class="DWon itemWon"></p>
+        <p class="DWon">원</p>
+        <hr>
+      </div>
+
+      <div class="Dcount">
+        <span>수량
+        <input type="number" name="count" id="count" value="1" min="1">
+        </span>
+      </div><br>
+
+      <div class="Dcount2">
+        <p name="totalPrice" id="totalPrice"></p>
+        <p>총 금액</p>
+        </div>
+
+
     </div>
-    <div class="goodText_btn"  th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" >
+    <div class="goodText_btn clearTest"  th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" >
       <button type="button" onclick="addCart()" class="goodBth1">장바구니</button>
       <button type="button" onclick="order()" class="goodBth2">주문하기</button>
     </div>
@@ -172,6 +185,7 @@
 
   <!-- 하단 상세이미지부분 -->
   <div class="goodsBottom">
+    <hr>
     <p>상품 상세설명</p>
     <p class="notice"  th:text="${item.itemDetail}"></p>
     <hr>
