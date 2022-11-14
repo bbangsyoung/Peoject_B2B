@@ -1,11 +1,11 @@
-# B2B Market.biz : 캠핑용품 B2B 웹사이트
+# B2B Market.biz : 캠핑용품 B2B 웹사이트 <img src="https://img.shields.io/badge/SpringBoot-2e6d00?style=flat-square&logo=Java&logoColor=white">
 
 
 `SpringBoot`를 이용한 `B2B(Business-to-Business)` 웹사이트<br>
 개발기간 : 2022.11.01 ~ 진행중. 아래로 추가.
 
 http://43.200.119.189:8080/ <br>
-AWS 프리티어 계정이다보니 처음 켜질 때 조금 느립니다.
+AWS 프리티어 계정이다보니 페이지마다 처음 켜질 때 조금 느립니다.
 
 ---
 1차 기능 - 기본적인 상품등록, 수정, 장바구니담기, 구매, 구매내역, 회원가입 및 로그인(스프링 시큐리티)
