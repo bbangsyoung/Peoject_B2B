@@ -1,4 +1,4 @@
-# B2B Market.biz : 캠핑용품 B2B 웹사이트 <img src="https://img.shields.io/badge/SpringBoot-2e6d00?style=flat-square&logo=Java&logoColor=white">
+# B2B Market.biz 🏕 캠핑용품 B2B 웹사이트 <img src="https://img.shields.io/badge/SpringBoot-2e6d00?style=flat-square&logo=Java&logoColor=white">
 
 
 `SpringBoot`를 이용한 `B2B(Business-to-Business)` 웹사이트<br>
