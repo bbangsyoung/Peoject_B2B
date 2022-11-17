@@ -2,7 +2,6 @@
 
 
 `SpringBoot`와 `Mysql` 이용한 `B2B(Business-to-Business)` 웹사이트<br>
-개발기간 : 2022.11.01 ~ 진행중. 
 
 ✅ 사이트 바로가기:<b> http://43.200.119.189:8080 </b> <br>
 AWS 프리티어 계정으로, 최초 접속 시 다소 느린 점 양해부탁드립니다. <br>
@@ -14,7 +13,7 @@ AWS 프리티어 계정으로, 최초 접속 시 다소 느린 점 양해부탁�
 
 ## 🖥 프로젝트 소개
 - 프로젝트명 : B2B Market.biz 캠핑용품 B2B 웹사이트
-- 개발기간 <img src="https://img.shields.io/badge/22/11/01 ~ 22/11/16-ffce66?style=flat&logo=java&logoColor=white">
+- 개발기간 <img src="https://img.shields.io/badge/22/11/01 ~ 22/11/16(1차 완성) -ffce66?style=flat&logo=java&logoColor=white">
 - 타겟층 : 벤더사 관리를 하는 기업(공급사, 제조사 등)
 - 기획배경 : 기존 카페24 등에서 제공하는 템플릿으로는 일반판매 쇼핑몰 밖에 구현하지 못하는 한계점이 있음. <br>
 그래서 제조사들은 B2B사이트를 만들때면 매번 개발자에게 개인 의뢰를 해야함.
