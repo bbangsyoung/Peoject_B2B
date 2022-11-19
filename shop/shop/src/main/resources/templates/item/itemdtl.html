@@ -189,8 +189,13 @@
     <p>상품 상세설명</p>
     <p class="notice"  th:text="${item.itemDetail}"></p>
     <hr>
-    <div class="detailImg" th:each="itemImg : ${item.itemImgVoList}">
-      <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" width="800">
+    <input type="hidden" class="itemId" th:value="${item.id}">
+    <div class="detailImg itemId" th:each="itemImg : ${item.itemImgVoList}">
+      <!-- 첨부 이미지중 인덱스[1]부터 출력 -->
+      <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${item.itemImgVoList[itemImgStat.count].imgUrl}" width="800">
+
+      <!--<div class="detailImg" th:each="itemImg : ${item.itemImgVoList}">
+      <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" width="800">-->
     </div>
   </div><!-- 하단 상세이미지부분 끝 -->
 

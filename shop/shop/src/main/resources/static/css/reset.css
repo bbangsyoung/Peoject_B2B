@@ -1,12 +1,16 @@
 @charset "utf-8";
-    
-/* 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
+
+/*폰트*/
+
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -17,7 +21,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -25,7 +29,7 @@ time, mark, audio, video {
     border:0;
     outline:0;
     font-size:100%;
-    font:400 17px/1.5em Pretendard,sans-serif; color:#333333;
+    font:400 15px/1.5em 'Noto Sans KR', sans-serif; color:#333333;
     vertical-align:baseline;
     background:transparent;
 }
@@ -35,8 +39,8 @@ body {
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-	display:block;
+footer,header,hgroup,menu,nav,section {
+    display:block;
 }
 
 nav ul {
@@ -59,7 +63,7 @@ a{
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
-	text-decoration:none;
+    text-decoration:none;
     color: #333;
 }
 a:hover{text-decoration:none; color:#c641f2;}
@@ -74,7 +78,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -97,7 +101,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -113,66 +117,3 @@ ol, ul {
 }
 
 
-/*폰트*/
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 900;
-	font-display: swap;
-	src: local('Pretendard Black'), url('../font/woff2/Pretendard-Black.woff2') format('woff2'), url('../font/woff/Pretendard-Black.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 800;
-	font-display: swap;
-	src: local('Pretendard ExtraBold'), url('../font/woff2/Pretendard-ExtraBold.woff2') format('woff2'), url('../font/woff/Pretendard-ExtraBold.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 700;
-	font-display: swap;
-	src: local('Pretendard Bold'), url('../font/woff2/Pretendard-Bold.woff2') format('woff2'), url('../font/woff/Pretendard-Bold.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 600;
-	font-display: swap;
-	src: local('Pretendard SemiBold'), url('../font/woff2/Pretendard-SemiBold.woff2') format('woff2'), url('../font/woff/Pretendard-SemiBold.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 500;
-	font-display: swap;
-	src: local('Pretendard Medium'), url('../font/woff2/Pretendard-Medium.woff2') format('woff2'), url('../font/woff/Pretendard-Medium.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 400;
-	font-display: swap;
-	src: local('Pretendard Regular'), url('../font/woff2/Pretendard-Regular.woff2') format('woff2'), url('../font/woff/Pretendard-Regular.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 300;
-	font-display: swap;
-	src: local('Pretendard Light'), url('../font/woff2/Pretendard-Light.woff2') format('woff2'), url('../font/woff/Pretendard-Light.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 200;
-	font-display: swap;
-	src: local('Pretendard ExtraLight'), url('../font/woff2/Pretendard-ExtraLight.woff2') format('woff2'), url('../font/woff/Pretendard-ExtraLight.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 100;
-	font-display: swap;
-	src: local('Pretendard Thin'), url('../font/woff2/Pretendard-Thin.woff2') format('woff2'), url('../font/woff/Pretendard-Thin.woff') format('woff');
-}

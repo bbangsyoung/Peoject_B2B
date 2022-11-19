@@ -36,7 +36,7 @@ public class ItemController {
     @GetMapping(value = "/admin/item/new")
     public String itemForm(Model model){
         model.addAttribute("itemFormVo", new ItemFormVo());
-        return "item/itemForm";
+        return "item/itemform";
     }
 
     @PostMapping(value = "/admin/item/new")
@@ -44,19 +44,19 @@ public class ItemController {
                           Model model, @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList){
 
         if(bindingResult.hasErrors()){
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         if(itemImgFileList.get(0).isEmpty() && itemFormVo.getId() == null){
             model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수 입력 값 입니다.");
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         try {
             itemService.saveItem(itemFormVo, itemImgFileList);
         } catch (Exception e){
             model.addAttribute("errorMessage", "상품 등록 중 에러가 발생하였습니다.");
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         return "redirect:/";
@@ -72,29 +72,29 @@ public class ItemController {
         } catch(EntityNotFoundException e){
             model.addAttribute("errorMessage", "존재하지 않는 상품 입니다.");
             model.addAttribute("itemFormVo", new ItemFormVo());
-            return "item/itemForm";
+            return "item/itemform";
         }
 
-        return "item/itemForm";
+        return "item/itemform";
     }
 
     @PostMapping(value = "/admin/item/{itemId}")
     public String itemUpdate(@Valid ItemFormVo itemFormVo, BindingResult bindingResult,
                              @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
         if(bindingResult.hasErrors()){
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         if(itemImgFileList.get(0).isEmpty() && itemFormVo.getId() == null){
             model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수 입력 값 입니다.");
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         try {
             itemService.updateItem(itemFormVo, itemImgFileList);
         } catch (Exception e){
             model.addAttribute("errorMessage", "상품 수정 중 에러가 발생하였습니다.");
-            return "item/itemForm";
+            return "item/itemform";
         }
 
         return "redirect:/";
